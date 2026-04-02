@@ -74,7 +74,7 @@ const ContactSection = () => {
             <div className="w-full h-64 md:h-80 rounded-2xl overflow-hidden glass-card border border-white/10 shadow-2xl relative group">
               <iframe
                 title="Localização da Up Tower®"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1m3!1d3658.2675971485603!2d-46.17387432367504!3d-23.523821060233486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cd716f44d5a9d1%3A0x7d6a5d7c3d9a1c8!2sR.%20Eud%C3%B3xia%20Castello%20Branco%2C%20360%20-%20Vila%20Suissa%2C%20Mogi%20das%20Cruzes%20-%20SP%2C%2008810-040!5e0!3m2!1spt-BR!2sbr!4v1711925000000!5m2!1spt-BR!2sbr"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.891348393859!2d-46.15742239999999!3d-23.500422699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cdd9d95bfd8825%3A0x543c4b948ea6db07!2sR.%20Eud%C3%B3xia%20Castello%20Branco%2C%20360%20-%20Vila%20Suissa%2C%20Mogi%20das%20Cruzes%20-%20SP%2C%2008810-040!5e0!3m2!1spt-BR!2sbr!4v1775111488624!5m2!1spt-BR!2sbr"
                 width="100%"
                 height="100%"
                 style={{ border: 0, filter: "grayscale(1) invert(0.8) brightness(1.1) contrast(1.1)" }}

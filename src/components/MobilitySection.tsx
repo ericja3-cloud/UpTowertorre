@@ -28,7 +28,7 @@ const MobilitySection = () => {
             transition={{ delay: 0.2 }}
             className="flex items-center justify-center p-8 order-2"
           >
-            <div className="max-w-[75%] w-full">
+            <div className="w-full lg:scale-110 origin-left transition-transform duration-700">
               <ParallaxImage
                 src={vehicleImg2}
                 alt="Unidade Móvel Up Tower® com mastro estendido"
@@ -81,7 +81,7 @@ const MobilitySection = () => {
                   }}
                   className="text-gradient-silver block pt-4 interactive-cursor"
                 >
-                  AGILIDADE PARA
+                  OPERAÇÕES
                 </motion.span>
               </div>
               <div className="overflow-hidden">
@@ -92,7 +92,7 @@ const MobilitySection = () => {
                   }}
                   className="text-gradient-silver block pt-1 pb-2"
                 >
-                  OPERAÇÕES DINÂMICAS
+                  DINÂMICAS
                 </motion.span>
               </div>
             </h2>
@@ -105,7 +105,10 @@ const MobilitySection = () => {
               className="space-y-6"
             >
               <p className="text-lg text-muted-foreground leading-relaxed font-medium">
-                Além das torres, a Up Tower® - Torre de Vigilância conta com unidades veiculares blindadas e preparadas para operações móveis de alta performance, ideais para cenários que exigem deslocamento tático e resposta imediata.
+                A UP Tower®️ vai além das torres de vigilância, oferecendo também unidades móveis veiculares motorizadas, ideais para operações que exigem agilidade, mobilidade e resposta imediata. 
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed font-medium">
+                Com autonomia energética e mastros de até 12 metros, estas unidades garantem presença ostensiva e continuidade operacional mesmo em locais sem infraestrutura, integrando-se totalmente aos sistemas das forças de segurança.
               </p>
               <div className="flex items-center gap-3 p-4 glass-card rounded-xl border border-white/5 w-fit">
                 <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />

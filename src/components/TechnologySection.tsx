@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Camera, Wifi, Sun, Radio, Zap, Cpu } from "lucide-react";
+import { Camera, Wifi, Sun, Radio, Zap, Cpu, Shield } from "lucide-react";
 import camerasImg from "@/assets/cameras-equipment.jpg";
 
 const techItems = [
@@ -26,7 +26,7 @@ const TechnologySection = () => {
             <div className="flex items-center gap-2 mb-4">
               <Cpu className="w-5 h-5 text-primary animate-pulse-glow" />
               <span className="text-xs font-semibold tracking-[0.2em] uppercase text-primary block">
-                Tecnologia Embarcada
+                Tecnologia de Ponta
               </span>
             </div>
             <h2 className="font-heading text-4xl md:text-5xl mb-6 font-bold leading-tight uppercase">
@@ -38,7 +38,7 @@ const TechnologySection = () => {
                   }}
                   className="text-gradient-silver block pt-4 interactive-cursor"
                 >
-                  TECNOLOGIA DE
+                  TECNOLOGIA
                 </motion.span>
               </div>
               <div className="overflow-hidden">
@@ -49,16 +49,31 @@ const TechnologySection = () => {
                   }}
                   className="text-gradient-silver block"
                 >
-                  PONTA
+                  EMBARCADA
                 </motion.span>
               </div>
             </h2>
-            <p className="text-muted-foreground leading-relaxed mb-8">
-              As torres utilizam equipamentos de alta qualidade e tecnologia consolidada no mercado, garantindo confiabilidade e desempenho.
-            </p>
+            <div className="space-y-4 mb-8">
+              <p className="text-muted-foreground leading-relaxed">
+                As torres da UP Tower®️ utilizam equipamentos de alta qualidade e tecnologia consolidada no mercado, garantindo elevado nível de confiabilidade, estabilidade operacional e desempenho contínuo.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Com sistemas embarcados de última geração, nossas soluções contam com câmeras de alta resolução, monitoramento perimetral, conectividade avançada e transmissão de dados em tempo real, assegurando eficiência operacional em diferentes cenários.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Além disso, as torres possuem estrutura preparada para operação contínua, bem como integração com centrais de monitoramento e plataformas inteligentes, ampliando a capacidade de controle e resposta das operações.
+              </p>
+            </div>
 
             <div className="grid grid-cols-2 gap-3">
-              {techItems.map(({ icon: Icon, label }, i) => (
+              {[
+                { icon: Camera, label: "Câmeras de alta resolução" },
+                { icon: Shield, label: "Monitoramento perimetral" },
+                { icon: Wifi, label: "Conectividade avançada" },
+                { icon: Radio, label: "Transmissão em tempo real" },
+                { icon: Zap, label: "Operação contínua" },
+                { icon: Cpu, label: "Plataformas inteligentes" },
+              ].map(({ icon: Icon, label }, i) => (
                 <motion.div
                   key={label}
                   initial={{ opacity: 0, scale: 0.9 }}

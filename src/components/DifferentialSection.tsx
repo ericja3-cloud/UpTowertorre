@@ -8,7 +8,7 @@ const DifferentialSection = () => {
     <section id="diferencial" className="relative py-24 bg-secondary bg-grid-pattern overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-secondary via-transparent to-secondary pointer-events-none" />
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -16,13 +16,13 @@ const DifferentialSection = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="flex items-center justify-center p-8 order-2 md:order-1"
           >
-            <div className="max-w-[75%] w-full">
+            <div className="w-full lg:scale-110 origin-left transition-transform duration-700">
               <ParallaxImage
                 src={towerIlluminated}
                 alt="Torre Up Tower® - Torre de Vigilância com iluminação"
                 width={1280}
                 height={720}
-                className="shadow-card"
+                className="w-full h-full"
               />
             </div>
           </motion.div>
@@ -92,7 +92,10 @@ const DifferentialSection = () => {
               className="space-y-10"
             >
               <p className="text-lg text-muted-foreground leading-relaxed font-medium">
-                A Up Tower® - Torre de Vigilância desenvolveu uma torre de vigilância móvel com tecnologia própria e design inovador, tornando sua solução absolutamente inimitável no mercado nacional.
+                A UP Tower®️ desenvolveu uma solução de monitoramento móvel com tecnologia patenteada, sendo única no Brasil, sem equivalentes no mercado nacional.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed font-medium">
+                Fruto de um planejamento estratégico focado em inovação e eficiência operacional, nossas torres de vigilância unem engenharia própria, design funcional e tecnologia embarcada de alto desempenho, entregando uma solução exclusiva, robusta e altamente eficaz para operações de segurança.
               </p>
 
               {/* Enhanced Authority Badge */}

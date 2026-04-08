@@ -106,6 +106,8 @@
     color: transparent;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
     display: inline-block;
+    padding-top: 0.2em;
+    padding-bottom: 0.1em;
   }
 
   .bg-gradient-silver {

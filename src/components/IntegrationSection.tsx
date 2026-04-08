@@ -23,7 +23,7 @@ const IntegrationSection = () => {
             viewport={{ once: true }}
             className="flex items-center justify-center p-8 order-2 md:order-1"
           >
-            <div className="max-w-[75%] w-full">
+            <div className="w-full lg:scale-110 origin-left transition-transform duration-700">
               <ParallaxImage
                 src={monitoringCenter}
                 alt="Central de monitoramento"

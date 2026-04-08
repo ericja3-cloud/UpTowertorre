@@ -16,7 +16,7 @@ const AboutSection = () => {
             transition={{ duration: 0.7 }}
             className="flex items-center justify-center p-8 order-2 md:order-1"
           >
-            <div className="max-w-[75%] w-full">
+            <div className="w-full lg:scale-110 origin-right transition-transform duration-700">
               <ParallaxImage
                 src={towerDestaque}
                 alt="Up Tower® - Torre de Vigilância em destaque"
@@ -92,10 +92,10 @@ const AboutSection = () => {
               className="space-y-6"
             >
               <p className="text-lg text-muted-foreground leading-relaxed font-medium">
-                A Up Tower® - Torre de Vigilância é referência em monitoramento móvel, oferecendo uma solução estratégica que une mobilidade radical, eficiência operacional e presença ostensiva definitiva em campo.
+                Nossas torres de vigilância possuem estrutura elevada e tecnologia embarcada de alto desempenho, proporcionando uma visão privilegiada de 360° do ambiente. Atuando de forma preventiva, auxiliam as forças de segurança na inibição de ações criminosas e no monitoramento em tempo real de áreas estratégicas.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed font-medium">
-                Com estrutura elevada e sistemas de inteligência integrados, nossas torres proporcionam uma visão privilegiada de 360° do ambiente, atuando diretamente na prevenção contra crimes e no controle em tempo real de situações de alto risco.
+                Além disso, a UP Tower®️ possibilita a integração com centrais de monitoramento, permitindo a utilização de tecnologias como reconhecimento facial e leitura de placas de veículos (LPR), ampliando significativamente a capacidade de resposta e inteligência operacional.
               </p>
             </motion.div>
           </motion.div>

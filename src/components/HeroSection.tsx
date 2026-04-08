@@ -109,29 +109,16 @@ const HeroSection = () => {
               <div className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-green-500 rounded-full animate-ping opacity-75" />
             </div>
             <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">
-              Patente Oficial Registrada no Brasil
+              Tecnologia Patenteada e Exclusiva no Brasil
             </span>
           </motion.div>
   
           <div className="font-heading mb-10">
             <Typewriter 
-              text="A ÚNICA TORRE DE" 
+              text="TECNOLOGIA EXCLUSIVA QUE ELEVA O PADRÃO DA SEGURANÇA MÓVEL NO BRASIL." 
               delay={0.8}
-              cursor={false}
-              className="text-gradient-silver text-xl md:text-3xl tracking-[0.15em] font-bold mb-2 uppercase"
-            />
-            
-            <Typewriter 
-              text="VIGILÂNCIA MÓVEL" 
-              delay={1.6}
-              cursor={false}
-              className="text-gradient-silver text-4xl md:text-7xl font-black mb-3 uppercase tracking-tighter interactive-cursor"
-            />
-
-            <Typewriter 
-              text="PATENTEADA NO BRASIL." 
-              delay={2.5}
-              className="text-gradient-silver text-2xl md:text-4xl font-semibold uppercase tracking-tight"
+              cursor={true}
+              className="text-gradient-silver text-3xl md:text-6xl font-black mb-8 leading-tight tracking-tighter uppercase"
             />
           </div>
   
@@ -142,7 +129,7 @@ const HeroSection = () => {
             }}
             className="text-lg text-muted-foreground/90 max-w-2xl mx-auto mb-14 leading-relaxed font-medium md:text-xl md:px-12"
           >
-            Mobilidade estratégica, presença ostensiva e monitoramento inteligente em um único sistema de segurança de alta tecnologia.
+            A UP Tower®️ é referência em monitoramento móvel, com tecnologia patenteada e exclusiva no Brasil, oferecendo uma solução estratégica que alia mobilidade, eficiência operacional e presença ostensiva em campo.
           </motion.p>
   
           <motion.div

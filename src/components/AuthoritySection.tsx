@@ -8,14 +8,14 @@ const AuthoritySection = () => {
     <section className="relative py-24 bg-background bg-grid-pattern overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background pointer-events-none" />
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="flex items-center justify-center p-8 order-2"
           >
-            <div className="max-w-[75%] w-full">
+            <div className="w-full lg:scale-110 origin-left transition-transform duration-700">
               <ParallaxImage
                 src={authorityImg}
                 alt="Operação com Guarda Civil Municipal"
@@ -91,10 +91,13 @@ const AuthoritySection = () => {
               className="space-y-6"
             >
               <p className="text-lg text-muted-foreground leading-relaxed font-medium">
-                Com mais de 15 anos de excelência operacional, a Up Tower® - Torre de Vigilância consolidou uma trajetória de autoridade inquestionável em segurança tática.
+                Com mais de 15 anos de experiência, a UP Tower®️ construiu uma trajetória sólida no desenvolvimento de soluções em monitoramento móvel e segurança.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed font-medium">
-                Atuamos em parceria estratégica com a Guarda Civil Municipal de Mogi das Cruzes, provendo a infraestrutura de monitoramento mais avançada do estado.
+                Atuamos em parceria com órgãos públicos e empresas privadas, contribuindo com infraestrutura avançada de monitoramento e apoiando operações de segurança com tecnologia, eficiência e presença ostensiva.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed font-medium">
+                Com histórico de atuação junto a forças de segurança em cidades como Mogi das Cruzes, Itaquaquecetuba e Arujá, reforçamos na prática a confiabilidade e a eficácia das nossas soluções em campo.
               </p>
             </motion.div>
           </motion.div>

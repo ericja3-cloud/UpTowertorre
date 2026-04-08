@@ -28,8 +28,31 @@ async function deploy() {
     // Se preferir apenas sobrescrever sem apagar o resto, comente a linha abaixo
     // await client.clearWorkingDir(); 
 
-    // Upload da pasta dist inteira
-    await client.uploadFromDir(path.join(__dirname, "../dist"), remoteDir);
+    // Função customizada para enviar arquivos ignorando vídeos pesados
+    const fs = require("fs");
+    async function uploadDirectory(localDirPath, remoteDirPath) {
+      await client.ensureDir(remoteDirPath);
+      const entries = fs.readdirSync(localDirPath, { withFileTypes: true });
+      for (const entry of entries) {
+        const localPath = path.join(localDirPath, entry.name);
+        const remotePath = remoteDirPath + (remoteDirPath.endsWith("/") ? "" : "/") + entry.name;
+        
+        if (entry.name.endsWith(".mp4") || entry.name.endsWith(".webm")) {
+          console.log(`⏩ Ignorando vídeo pesado para acelerar o deploy: ${entry.name}`);
+          continue;
+        }
+        
+        if (entry.isDirectory()) {
+          await uploadDirectory(localPath, remotePath);
+          await client.cd(remoteDirPath); // Volta para o diretório pai após recursão
+        } else {
+          await client.uploadFrom(localPath, remotePath);
+        }
+      }
+    }
+
+    // Upload da pasta dist inteira, exceto vídeos
+    await uploadDirectory(path.join(__dirname, "../dist"), remoteDir);
 
     console.log("✅ DEPLOY CONCLUÍDO COM SUCESSO! 🛰️✨");
     console.log(`🌍 Verifique em: https://uptower.com.br/`);

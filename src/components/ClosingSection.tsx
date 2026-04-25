@@ -26,7 +26,7 @@ const ClosingSection = () => {
           <div className="flex items-center justify-center mb-6">
             <Rocket className="w-12 h-12 text-primary drop-shadow-[0_0_15px_rgba(226,232,240,0.5)] animate-pulse-glow" />
           </div>
-          <h2 className="font-heading text-4xl md:text-6xl text-gradient-silver mb-4 leading-tight uppercase">
+          <h2 className="font-heading text-4xl md:text-6xl text-gradient-silver mb-6 leading-[1.3] uppercase py-0">
             NÃO SE TRATA APENAS DE
             <br />
             MONITORAR
@@ -35,7 +35,7 @@ const ClosingSection = () => {
             É sobre dominar o ambiente e antecipar riscos.
           </h3>
           <p className="text-lg text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed font-medium">
-            Com presença ostensiva e mobilidade estratégica, a UP Tower®️ posiciona a segurança no ponto certo, no momento certo — prevenindo ocorrências e elevando o nível de controle das operações.
+            Com presença ostensiva e mobilidade estratégica, a UP Tower<span className="text-[0.5em] align-top relative top-[0.1em] text-inherit">®</span> posiciona a segurança no ponto certo, no momento certo — prevenindo ocorrências e elevando o nível de controle das operações.
           </p>
           <a
             href="#contato"

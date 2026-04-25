@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Shield, Award, CheckCircle2 } from "lucide-react";
-import towerIlluminated from "@/assets/tower-illuminated.jpg";
-import ParallaxImage from "./ParallaxImage";
+import DifferentialImageCarousel from "./DifferentialImageCarousel";
 
 const DifferentialSection = () => {
   return (
@@ -17,13 +16,7 @@ const DifferentialSection = () => {
             className="flex items-center justify-center p-8 order-2 md:order-1"
           >
             <div className="w-full lg:scale-110 origin-left transition-transform duration-700">
-              <ParallaxImage
-                src={towerIlluminated}
-                alt="Torre Up Tower® - Torre de Vigilância com iluminação"
-                width={1280}
-                height={720}
-                className="w-full h-full"
-              />
+              <DifferentialImageCarousel />
             </div>
           </motion.div>
 
@@ -59,25 +52,25 @@ const DifferentialSection = () => {
               </span>
             </motion.div>
             
-            <h2 className="font-heading text-4xl md:text-6xl mb-8 font-bold leading-[1.1] tracking-tight uppercase">
-              <div className="overflow-hidden">
+            <h2 className="font-heading text-4xl md:text-6xl mb-6 font-bold leading-[1.1] tracking-tight uppercase">
+              <div className="overflow-hidden pt-[0.2em] pb-[0.2em] -my-[0.2em]">
                 <motion.span 
                   variants={{
                     hidden: { y: "110%" },
                     visible: { y: 0, transition: { duration: 0.8, ease: [0.33, 1, 0.68, 1] } }
                   }}
-                  className="text-gradient-silver block pt-4 interactive-cursor"
+                  className="text-gradient-silver block py-0 interactive-cursor"
                 >
                   ESTRUTURA
                 </motion.span>
               </div>
-              <div className="overflow-hidden">
+              <div className="overflow-hidden pt-[0.2em] pb-[0.2em] -my-[0.2em]">
                 <motion.span 
                   variants={{
                     hidden: { y: "110%" },
                     visible: { y: 0, transition: { duration: 0.8, ease: [0.33, 1, 0.68, 1], delay: 0.1 } }
                   }}
-                  className="text-gradient-silver block pt-1 pb-2"
+                  className="text-gradient-silver block py-0"
                 >
                   ÚNICA NO MERCADO
                 </motion.span>
@@ -92,7 +85,7 @@ const DifferentialSection = () => {
               className="space-y-10"
             >
               <p className="text-lg text-muted-foreground leading-relaxed font-medium">
-                A UP Tower®️ desenvolveu uma solução de monitoramento móvel com tecnologia patenteada, sendo única no Brasil, sem equivalentes no mercado nacional.
+                A UP Tower<span className="text-[0.5em] align-top relative top-[0.1em] text-inherit">®</span> desenvolveu uma solução de monitoramento móvel com tecnologia patenteada, sendo única no Brasil, sem equivalentes no mercado nacional.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed font-medium">
                 Fruto de um planejamento estratégico focado em inovação e eficiência operacional, nossas torres de vigilância unem engenharia própria, design funcional e tecnologia embarcada de alto desempenho, entregando uma solução exclusiva, robusta e altamente eficaz para operações de segurança.
@@ -119,10 +112,15 @@ const DifferentialSection = () => {
                       A ÚNICA TORRE DE <br className="hidden md:block" />
                       <span className="text-primary italic">VIGILÂNCIA MÓVEL</span>
                     </h4>
-                    <p className="text-lg font-bold tracking-[0.1em] text-muted-foreground uppercase opacity-80">
+                    <p className="text-lg font-bold tracking-[0.1em] text-muted-foreground uppercase opacity-80 leading-none">
                       Patenteada no Brasil
                     </p>
                   </div>
+                </div>
+                <div className="mt-8 text-center md:text-left">
+                  <p className="text-2xl md:text-4xl font-black tracking-[0.1em] text-primary uppercase drop-shadow-[0_0_20px_rgba(255,165,0,0.2)]">
+                    PATENTE REGISTRADA <br /> Nº BR 202025016829-0
+                  </p>
                 </div>
               </div>
             </motion.div>

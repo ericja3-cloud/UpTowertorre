@@ -1,10 +1,21 @@
-import { motion } from "framer-motion";
-import { Headset, MapPin, Phone, Mail } from "lucide-react";
+import { useState, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Headset, MapPin, Phone, Mail, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import ReCAPTCHA from "react-google-recaptcha";
+import { useForm, ValidationError } from '@formspree/react';
 
 const ContactSection = () => {
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const [state, handleSubmit] = useForm("mpqojzql");
+
+  const handleCaptchaChange = (token: string | null) => {
+    setCaptchaToken(token);
+  };
+
   return (
     <section id="contato" className="relative py-24 bg-background border-t border-border bg-grid-pattern overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background pointer-events-none" />
@@ -70,7 +81,7 @@ const ContactSection = () => {
               </div>
             </div>
 
-            {/* Mapa Reposicionado e Ajustado */}
+            {/* Mapa */}
             <div className="w-full h-64 md:h-80 rounded-2xl overflow-hidden glass-card border border-white/10 shadow-2xl relative group">
               <iframe
                 title="Localização da Up Tower®"
@@ -94,65 +105,113 @@ const ContactSection = () => {
             transition={{ delay: 0.1 }}
             className="lg:col-span-3 h-full"
           >
-            <form
-              action="https://formspree.io/f/YOUR_FORMSPREE_ID_HERE"
-              method="POST"
-              className="h-full flex flex-col space-y-6 bg-card/50 backdrop-blur-sm border border-white/10 p-8 md:p-10 rounded-2xl shadow-2xl relative overflow-hidden"
-            >
-              {/* Background Glow */}
-              <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary/5 blur-[100px] rounded-full pointer-events-none" />
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-bold tracking-tight text-foreground/80 uppercase">
-                    Nome Completo
-                  </label>
-                  <Input id="name" name="nome" placeholder="Ex: João da Silva" className="bg-background/80 border-white/5 h-12 focus:border-primary/50 transition-colors" required />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-bold tracking-tight text-foreground/80 uppercase">
-                    E-mail Corporate
-                  </label>
-                  <Input id="email" name="email" type="email" placeholder="contato@empresa.com.br" className="bg-background/80 border-white/5 h-12 focus:border-primary/50 transition-colors" required />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="company" className="text-sm font-bold tracking-tight text-foreground/80 uppercase">
-                    Empresa
-                  </label>
-                  <Input id="company" name="empresa" placeholder="Nome da sua empresa" className="bg-background/80 border-white/5 h-12 focus:border-primary/50 transition-colors" />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="phone" className="text-sm font-bold tracking-tight text-foreground/80 uppercase">
-                    WhatsApp Comercial
-                  </label>
-                  <Input id="phone" name="telefone" type="tel" placeholder="(11) 99999-9999" className="bg-background/80 border-white/5 h-12 focus:border-primary/50 transition-colors" />
-                </div>
-              </div>
-              
-              <div className="space-y-2 flex-grow">
-                <label htmlFor="message" className="text-sm font-bold tracking-tight text-foreground/80 uppercase">
-                  Descreva sua Necessidade
-                </label>
-                <Textarea
-                  id="message"
-                  name="mensagem"
-                  placeholder="Conte-nos brevemente sobre o local da operação..."
-                  rows={6}
-                  className="bg-background/80 border-white/5 focus:border-primary/50 transition-colors resize-none h-full min-h-[150px]"
-                  required
-                />
-              </div>
-
-              <div className="text-center pt-6">
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="w-full md:w-auto bg-gradient-silver text-primary-foreground font-heading text-xl px-16 py-7 hover:opacity-90 transition-all hover:scale-105 shadow-silver border-0 tracking-tight"
+            <AnimatePresence mode="wait">
+              {state.succeeded ? (
+                <motion.div
+                  key="success"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  className="h-full flex flex-col items-center justify-center text-center bg-card/50 backdrop-blur-sm border border-primary/20 p-10 rounded-2xl shadow-2xl space-y-6"
                 >
-                  ENVIAR SOLICITAÇÃO TÉCNICA
-                </Button>
-              </div>
-            </form>
+                  <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center">
+                    <CheckCircle2 className="w-12 h-12 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-3xl font-bold text-gradient-silver mb-2">MENSAGEM ENVIADA!</h3>
+                    <p className="text-muted-foreground text-lg">
+                      Recebemos sua solicitação técnica. Nossa equipe entrará em contato em breve através do e-mail ou WhatsApp fornecido.
+                    </p>
+                  </div>
+                  <Button 
+                    variant="outline" 
+                    onClick={() => window.location.reload()}
+                    className="border-primary/20 hover:bg-primary/10"
+                  >
+                    ENVIAR OUTRA MENSAGEM
+                  </Button>
+                </motion.div>
+              ) : (
+                <form
+                  onSubmit={handleSubmit}
+                  className="h-full flex flex-col space-y-6 bg-card/50 backdrop-blur-sm border border-white/10 p-6 md:p-10 rounded-2xl shadow-2xl relative overflow-hidden"
+                >
+                  {/* Background Glow */}
+                  <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary/5 blur-[100px] rounded-full pointer-events-none" />
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label htmlFor="name" className="text-sm font-bold tracking-tight text-foreground/80 uppercase">
+                        Nome Completo
+                      </label>
+                      <Input id="name" name="nome" placeholder="Ex: João da Silva" className="bg-background/80 border-white/5 h-12 focus:border-primary/50 transition-colors" required />
+                      <ValidationError prefix="Nome" field="nome" errors={state.errors} className="text-xs text-red-500" />
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="email" className="text-sm font-bold tracking-tight text-foreground/80 uppercase">
+                        E-mail Corporate
+                      </label>
+                      <Input id="email" name="email" type="email" placeholder="contato@empresa.com.br" className="bg-background/80 border-white/5 h-12 focus:border-primary/50 transition-colors" required />
+                      <ValidationError prefix="Email" field="email" errors={state.errors} className="text-xs text-red-500" />
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="company" className="text-sm font-bold tracking-tight text-foreground/80 uppercase">
+                        Empresa
+                      </label>
+                      <Input id="company" name="empresa" placeholder="Nome da sua empresa" className="bg-background/80 border-white/5 h-12 focus:border-primary/50 transition-colors" />
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="phone" className="text-sm font-bold tracking-tight text-foreground/80 uppercase">
+                        WhatsApp Comercial
+                      </label>
+                      <Input id="phone" name="telefone" type="tel" placeholder="(11) 99999-9999" className="bg-background/80 border-white/5 h-12 focus:border-primary/50 transition-colors" />
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-2 flex-grow">
+                    <label htmlFor="message" className="text-sm font-bold tracking-tight text-foreground/80 uppercase">
+                      Descreva sua Necessidade
+                    </label>
+                    <Textarea
+                      id="message"
+                      name="mensagem"
+                      placeholder="Conte-nos brevemente sobre o local da operação..."
+                      rows={6}
+                      className="bg-background/80 border-white/5 focus:border-primary/50 transition-colors resize-none h-full min-h-[150px]"
+                      required
+                    />
+                    <ValidationError prefix="Mensagem" field="mensagem" errors={state.errors} className="text-xs text-red-500" />
+                  </div>
+
+                  {/* reCAPTCHA */}
+                  <div className="flex flex-col gap-2">
+                    <div className="flex justify-center md:justify-start">
+                      <ReCAPTCHA
+                        ref={recaptchaRef}
+                        sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || "YOUR_SITE_KEY_HERE"}
+                        onChange={handleCaptchaChange}
+                        theme="dark"
+                      />
+                    </div>
+                    {/* Campo oculto para que o Formspree receba o token */}
+                    <input type="hidden" name="g-recaptcha-response" value={captchaToken || ""} />
+                  </div>
+
+                  <div className="text-center pt-2">
+                    <Button
+                      type="submit"
+                      size="lg"
+                      disabled={state.submitting || !captchaToken}
+                      className={`w-full md:w-auto bg-gradient-silver text-primary-foreground font-heading text-lg md:text-xl px-4 py-5 md:px-16 md:py-7 hover:opacity-90 transition-all hover:scale-105 shadow-silver border-0 tracking-tight whitespace-normal h-auto min-h-[60px] ${
+                        (state.submitting || !captchaToken) ? "opacity-50 grayscale cursor-not-allowed" : ""
+                      }`}
+                    >
+                      {state.submitting ? "ENVIANDO..." : "ENVIAR SOLICITAÇÃO TÉCNICA"}
+                    </Button>
+                  </div>
+                </form>
+              )}
+            </AnimatePresence>
           </motion.div>
         </div>
       </div>

@@ -68,7 +68,7 @@ const Footer = () => {
 
         <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Up Tower® - Torre de Vigilância. Todos os direitos reservados.
+            © {new Date().getFullYear()} Up Tower<span className="text-[0.5em] align-top relative top-[0.1em] text-inherit">®</span> - Torre de Vigilância. Todos os direitos reservados.
           </p>
           <div className="flex gap-6 text-xs text-muted-foreground">
             <a href="#" className="hover:text-primary transition-colors">Termos de Uso</a>

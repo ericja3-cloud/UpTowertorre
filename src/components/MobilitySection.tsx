@@ -1,8 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Truck } from "lucide-react";
-import vehicleImg2 from "@/assets/vehicle-operation2.jpg";
-import ParallaxImage from "./ParallaxImage";
+import OperationsImageCarousel from "./OperationsImageCarousel";
 
 const MobilitySection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -29,13 +28,7 @@ const MobilitySection = () => {
             className="flex items-center justify-center p-8 order-2"
           >
             <div className="w-full lg:scale-110 origin-left transition-transform duration-700">
-              <ParallaxImage
-                src={vehicleImg2}
-                alt="Unidade Móvel Up Tower® com mastro estendido"
-                width={1280}
-                height={720}
-                className="shadow-card"
-              />
+              <OperationsImageCarousel />
             </div>
           </motion.div>
 
@@ -72,25 +65,25 @@ const MobilitySection = () => {
               </span>
             </motion.div>
             
-            <h2 className="font-heading text-4xl md:text-6xl mb-8 font-bold leading-[1.1] tracking-tight uppercase">
-              <div className="overflow-hidden">
+            <h2 className="font-heading text-4xl md:text-6xl mb-6 font-bold leading-[1.1] tracking-tight uppercase">
+              <div className="overflow-hidden pt-[0.2em] pb-[0.2em] -my-[0.2em]">
                 <motion.span 
                   variants={{
                     hidden: { y: "110%" },
                     visible: { y: 0, transition: { duration: 0.8, ease: [0.33, 1, 0.68, 1] } }
                   }}
-                  className="text-gradient-silver block pt-4 interactive-cursor"
+                  className="text-gradient-silver block py-0 interactive-cursor"
                 >
                   OPERAÇÕES
                 </motion.span>
               </div>
-              <div className="overflow-hidden">
+              <div className="overflow-hidden pt-[0.2em] pb-[0.2em] -my-[0.2em]">
                 <motion.span 
                   variants={{
                     hidden: { y: "110%" },
                     visible: { y: 0, transition: { duration: 0.8, ease: [0.33, 1, 0.68, 1], delay: 0.1 } }
                   }}
-                  className="text-gradient-silver block pt-1 pb-2"
+                  className="text-gradient-silver block py-0"
                 >
                   DINÂMICAS
                 </motion.span>
@@ -105,7 +98,7 @@ const MobilitySection = () => {
               className="space-y-6"
             >
               <p className="text-lg text-muted-foreground leading-relaxed font-medium">
-                A UP Tower®️ vai além das torres de vigilância, oferecendo também unidades móveis veiculares motorizadas, ideais para operações que exigem agilidade, mobilidade e resposta imediata. 
+                A UP Tower<span className="text-[0.5em] align-top relative top-[0.1em] text-inherit">®</span> vai além das torres de vigilância, oferecendo também unidades móveis veiculares motorizadas, ideais para operações que exigem agilidade, mobilidade e resposta imediata. 
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed font-medium">
                 Com autonomia energética e mastros de até 12 metros, estas unidades garantem presença ostensiva e continuidade operacional mesmo em locais sem infraestrutura, integrando-se totalmente aos sistemas das forças de segurança.

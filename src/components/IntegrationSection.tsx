@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ScanFace, CarFront, Monitor, Radio, Link } from "lucide-react";
-import monitoringCenter from "@/assets/monitoring-center.jpg";
+import monitoringCenter from "@/assets/referencia/central.png";
 import ParallaxImage from "./ParallaxImage";
 
 const features = [
@@ -67,25 +67,25 @@ const IntegrationSection = () => {
               </span>
             </motion.div>
             
-            <h2 className="font-heading text-4xl md:text-6xl mb-8 font-bold leading-[1.1] tracking-tight uppercase">
-              <div className="overflow-hidden">
+            <h2 className="font-heading text-4xl md:text-6xl mb-6 font-bold leading-[1.1] tracking-tight uppercase">
+              <div className="overflow-hidden pt-[0.2em] pb-[0.2em] -my-[0.2em]">
                 <motion.span 
                   variants={{
                     hidden: { y: "110%" },
                     visible: { y: 0, transition: { duration: 0.8, ease: [0.33, 1, 0.68, 1] } }
                   }}
-                  className="text-gradient-silver block pt-4 interactive-cursor"
+                  className="text-gradient-silver block py-0 interactive-cursor"
                 >
                   CENTRAIS DE
                 </motion.span>
               </div>
-              <div className="overflow-hidden">
+              <div className="overflow-hidden pt-[0.2em] pb-[0.2em] -my-[0.2em]">
                 <motion.span 
                   variants={{
                     hidden: { y: "110%" },
                     visible: { y: 0, transition: { duration: 0.8, ease: [0.33, 1, 0.68, 1], delay: 0.1 } }
                   }}
-                  className="text-gradient-silver block pt-1 pb-2"
+                  className="text-gradient-silver block py-0"
                 >
                   MONITORAMENTO
                 </motion.span>

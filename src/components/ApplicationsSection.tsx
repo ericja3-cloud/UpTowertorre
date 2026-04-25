@@ -16,7 +16,7 @@ const applications = [
 
 const ApplicationsSection = () => {
   return (
-    <section id="aplicacoes" className="py-24 bg-card relative overflow-hidden">
+    <section id="aplicacoes" className="py-24 relative overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
       <div className="absolute top-20 -left-20 w-80 h-80 bg-primary/5 rounded-full blur-[100px]" />
@@ -29,7 +29,7 @@ const ApplicationsSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="font-heading text-4xl md:text-6xl text-gradient-silver mb-6 uppercase">
+          <h2 className="font-heading text-4xl md:text-6xl text-gradient-silver mb-6 leading-[1.3] uppercase py-0">
             Aplicações Estratégicas
           </h2>
           <p className="text-muted-foreground text-xl max-w-3xl mx-auto">

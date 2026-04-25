@@ -65,24 +65,6 @@ const Preloader = () => {
               />
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="text-center"
-            >
-              <h2 className="font-heading text-xl font-bold tracking-[0.4em] uppercase text-gradient-silver mb-2">
-                UP TOWER®
-              </h2>
-              <div className="w-48 h-[1px] bg-white/10 relative overflow-hidden">
-                <motion.div 
-                  className="absolute inset-0 bg-primary"
-                  initial={{ x: "-100%" }}
-                  animate={{ x: "0%" }}
-                  transition={{ duration: 1.5, ease: "easeInOut" }}
-                />
-              </div>
-            </motion.div>
           </motion.div>
         </motion.div>
       )}

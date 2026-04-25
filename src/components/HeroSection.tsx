@@ -99,7 +99,7 @@ const HeroSection = () => {
               hidden: { opacity: 0, y: 30 },
               visible: { opacity: 1, y: 0 }
             }}
-            className="inline-flex items-center gap-2.5 mb-10 px-5 py-2.5 border border-primary/40 rounded-full bg-primary/10 backdrop-blur-md animate-float"
+            className="inline-flex items-center gap-2.5 mb-4 px-5 py-2.5 rounded-full bg-primary/10 backdrop-blur-md animate-float passing-light-border"
           >
             <div className="relative flex-shrink-0 w-7 h-7">
               <div className="absolute inset-0 rounded-full border-2 border-primary flex items-center justify-center">
@@ -108,9 +108,19 @@ const HeroSection = () => {
               <div className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-green-500 rounded-full border border-background animate-pulse" />
               <div className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-green-500 rounded-full animate-ping opacity-75" />
             </div>
-            <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-foreground">
               Tecnologia Patenteada e Exclusiva no Brasil
             </span>
+          </motion.div>
+
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 }
+            }}
+            className="text-xl md:text-3xl font-black tracking-[0.2em] text-primary uppercase mb-12 drop-shadow-[0_0_15px_rgba(255,165,0,0.3)]"
+          >
+            PATENTE REGISTRADA <br /> Nº BR 202025016829-0
           </motion.div>
   
           <div className="font-heading mb-10">
@@ -118,7 +128,7 @@ const HeroSection = () => {
               text="TECNOLOGIA EXCLUSIVA QUE ELEVA O PADRÃO DA SEGURANÇA MÓVEL NO BRASIL." 
               delay={0.8}
               cursor={true}
-              className="text-gradient-silver text-3xl md:text-6xl font-black mb-8 leading-tight tracking-tighter uppercase"
+              className="text-gradient-silver font-heading text-3xl md:text-6xl font-black mb-8 leading-[1.3] tracking-tighter uppercase py-0"
             />
           </div>
   
@@ -127,9 +137,9 @@ const HeroSection = () => {
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0, transition: { delay: 3.8 } }
             }}
-            className="text-lg text-muted-foreground/90 max-w-2xl mx-auto mb-14 leading-relaxed font-medium md:text-xl md:px-12"
+            className="text-2xl text-muted-foreground/90 max-w-4xl mx-auto mb-14 leading-relaxed font-medium md:text-3xl md:px-12"
           >
-            A UP Tower®️ é referência em monitoramento móvel, com tecnologia patenteada e exclusiva no Brasil, oferecendo uma solução estratégica que alia mobilidade, eficiência operacional e presença ostensiva em campo.
+            A UP Tower<span className="text-[0.5em] align-top relative top-[0.1em] text-inherit">®</span> é referência em monitoramento móvel, com tecnologia patenteada e exclusiva no Brasil, oferecendo uma solução estratégica que alia mobilidade, eficiência operacional e presença ostensiva em campo.
           </motion.p>
   
           <motion.div

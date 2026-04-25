@@ -12,11 +12,15 @@ export default defineConfig(({ mode }) => ({
     },
   },
   plugins: [react()],
-  assetsInclude: ["**/*.JPG", "**/*.HEIC"],
+  assetsInclude: ["**/*.JPG", "**/*.jpg", "**/*.PNG", "**/*.png", "**/*.JPEG", "**/*.jpeg", "**/*.HEIC"],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
     dedupe: ["react", "react-dom", "react/jsx-runtime", "react/jsx-dev-runtime"],
+  },
+  build: {
+    outDir: "dist",
+    emptyOutDir: true,
   },
 }));

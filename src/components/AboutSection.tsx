@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Target } from "lucide-react";
-import towerDestaque from "@/assets/destaque-tower.jpg";
-import ParallaxImage from "./ParallaxImage";
+import AboutImageCarousel from "./AboutImageCarousel";
 
 const AboutSection = () => {
   return (
@@ -17,13 +16,7 @@ const AboutSection = () => {
             className="flex items-center justify-center p-8 order-2 md:order-1"
           >
             <div className="w-full lg:scale-110 origin-right transition-transform duration-700">
-              <ParallaxImage
-                src={towerDestaque}
-                alt="Up Tower® - Torre de Vigilância em destaque"
-                width={1280}
-                height={720}
-                className="shadow-card"
-              />
+              <AboutImageCarousel />
             </div>
           </motion.div>
 
@@ -59,25 +52,25 @@ const AboutSection = () => {
               </span>
             </motion.div>
             
-            <h2 className="font-heading text-4xl md:text-6xl mb-8 font-bold leading-[1.1] tracking-tight uppercase">
-              <div className="overflow-hidden">
+            <h2 className="font-heading text-4xl md:text-6xl mb-6 font-bold leading-[1.1] tracking-tight uppercase">
+              <div className="overflow-hidden pt-[0.2em] pb-[0.1em] -mb-[0.1em]">
                 <motion.span 
                   variants={{
                     hidden: { y: "110%" },
                     visible: { y: 0, transition: { duration: 0.8, ease: [0.33, 1, 0.68, 1] } }
                   }}
-                  className="text-gradient-silver block pt-4 interactive-cursor"
+                  className="text-gradient-silver block py-0 interactive-cursor"
                 >
                   REFERÊNCIA EM
                 </motion.span>
               </div>
-              <div className="overflow-hidden">
+              <div className="overflow-hidden pt-[0.1em] pb-[0.2em] -mt-[0.15em]">
                 <motion.span 
                   variants={{
                     hidden: { y: "110%" },
                     visible: { y: 0, transition: { duration: 0.8, ease: [0.33, 1, 0.68, 1], delay: 0.1 } }
                   }}
-                  className="text-gradient-silver block pt-2 pb-4"
+                  className="text-gradient-silver block py-0"
                 >
                   MONITORAMENTO MÓVEL
                 </motion.span>
@@ -95,7 +88,7 @@ const AboutSection = () => {
                 Nossas torres de vigilância possuem estrutura elevada e tecnologia embarcada de alto desempenho, proporcionando uma visão privilegiada de 360° do ambiente. Atuando de forma preventiva, auxiliam as forças de segurança na inibição de ações criminosas e no monitoramento em tempo real de áreas estratégicas.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed font-medium">
-                Além disso, a UP Tower®️ possibilita a integração com centrais de monitoramento, permitindo a utilização de tecnologias como reconhecimento facial e leitura de placas de veículos (LPR), ampliando significativamente a capacidade de resposta e inteligência operacional.
+                Além disso, a UP Tower<span className="text-[0.5em] align-top relative top-[0.1em] text-inherit">®</span> possibilita a integração com centrais de monitoramento, permitindo a utilização de tecnologias como reconhecimento facial e leitura de placas de veículos (LPR), ampliando significativamente a capacidade de resposta e inteligência operacional.
               </p>
             </motion.div>
           </motion.div>

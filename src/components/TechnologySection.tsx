@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Camera, Wifi, Sun, Radio, Zap, Cpu, Shield } from "lucide-react";
-import camerasImg from "@/assets/cameras-equipment.jpg";
+import TechnologyImageCarousel from "./TechnologyImageCarousel";
 
 const techItems = [
   { icon: Camera, label: "Câmeras de alta resolução" },
@@ -29,33 +29,33 @@ const TechnologySection = () => {
                 Tecnologia de Ponta
               </span>
             </div>
-            <h2 className="font-heading text-4xl md:text-5xl mb-6 font-bold leading-tight uppercase">
-              <div className="overflow-hidden">
-                <motion.span 
-                  variants={{
-                    hidden: { y: "110%" },
-                    visible: { y: 0, transition: { duration: 0.8, ease: [0.33, 1, 0.68, 1] } }
-                  }}
-                  className="text-gradient-silver block pt-4 interactive-cursor"
-                >
-                  TECNOLOGIA
-                </motion.span>
-              </div>
-              <div className="overflow-hidden">
-                <motion.span 
-                  variants={{
-                    hidden: { y: "110%" },
-                    visible: { y: 0, transition: { duration: 0.8, ease: [0.33, 1, 0.68, 1], delay: 0.1 } }
-                  }}
-                  className="text-gradient-silver block"
-                >
-                  EMBARCADA
-                </motion.span>
-              </div>
+            <h2 className="font-heading text-4xl md:text-6xl mb-6 font-bold leading-[1.1] tracking-tight uppercase text-center md:text-left">
+                  <div className="overflow-hidden pt-[0.2em] pb-[0.2em] -my-[0.2em]">
+                    <motion.span 
+                      variants={{
+                        hidden: { y: "110%" },
+                        visible: { y: 0, transition: { duration: 0.8, ease: [0.33, 1, 0.68, 1] } }
+                      }}
+                      className="text-gradient-silver block py-0 interactive-cursor"
+                    >
+                      TECNOLOGIA
+                    </motion.span>
+                  </div>
+                  <div className="overflow-hidden pt-[0.2em] pb-[0.2em] -my-[0.2em]">
+                    <motion.span 
+                      variants={{
+                        hidden: { y: "110%" },
+                        visible: { y: 0, transition: { duration: 0.8, ease: [0.33, 1, 0.68, 1], delay: 0.1 } }
+                      }}
+                      className="text-gradient-silver block py-0"
+                    >
+                      EMBARCADA
+                    </motion.span>
+                  </div>
             </h2>
             <div className="space-y-4 mb-8">
               <p className="text-muted-foreground leading-relaxed">
-                As torres da UP Tower®️ utilizam equipamentos de alta qualidade e tecnologia consolidada no mercado, garantindo elevado nível de confiabilidade, estabilidade operacional e desempenho contínuo.
+                As torres da UP Tower<span className="text-[0.5em] align-top relative top-[0.1em] text-inherit">®</span> utilizam equipamentos de alta qualidade e tecnologia consolidada no mercado, garantindo elevado nível de confiabilidade, estabilidade operacional e desempenho contínuo.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 Com sistemas embarcados de última geração, nossas soluções contam com câmeras de alta resolução, monitoramento perimetral, conectividade avançada e transmissão de dados em tempo real, assegurando eficiência operacional em diferentes cenários.
@@ -96,14 +96,7 @@ const TechnologySection = () => {
             transition={{ delay: 0.2 }}
             className="order-1 md:order-2"
           >
-            <img
-              src={camerasImg}
-              alt="Equipamentos e câmeras de segurança"
-              loading="lazy"
-              width={1280}
-              height={720}
-              className="w-full rounded-sm shadow-card"
-            />
+            <TechnologyImageCarousel />
           </motion.div>
         </div>
       </div>

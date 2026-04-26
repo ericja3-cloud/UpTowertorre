@@ -17,6 +17,7 @@ import {
 
 // IDs de posts do Instagram da @up.tower
 const IG_POST_IDS = [
+  "DXhI6P9kfl_",
   "DQh8flPkbj5",
   "DQSp27tkfpJ", 
   "DE0yKmXRcx9", 
